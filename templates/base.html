@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMarket - Premium Cars</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-light">
+    <!-- DEMO DISCLAIMER BANNER -->
+    <div class="alert alert-warning alert-dismissible fade show text-center mb-0 rounded-0 border-0 shadow-sm"
+        role="alert">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        <strong>Demo Mode:</strong> This website is built for educational and example purposes only. No real cars are
+        being sold!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="{% url 'store:car_list' %}">
+                <i class="fas fa-car-side me-2"></i>AutoMarket
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'store:car_list' %}">Inventory</a>
+                    </li>
+
+                    <!-- Cart Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{% url 'store:cart_detail' %}">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            {% if cart|length > 0 %}
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ cart|length }}
+                            </span>
+                            {% endif %}
+                        </a>
+                    </li>
+
+                    <!-- Auth Links -->
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> {{ request.user.username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'store:profile' %}">My Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                            <li>
+                                <form action="{% url 'store:logout' %}" method="post" class="d-inline m-0">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item text-danger"
+                                        style="background: none; border: none; width: 100%; text-align: left; padding: 0.25rem 1rem;">
+                                        Logout
+                                    </button>
+                                </form>
+                            </li>
+                    </li>
+                </ul>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light ms-2 px-3" href="{% url 'store:login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger ms-2 px-3 text-white fw-bold" href="{% url 'store:register' %}">
+                        Sign Up
+                    </a>
+                </li>
+                {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container my-5">
+        {% block content %}
+        <!-- Child templates will inject content here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0">&copy; 2026 AutoMarket. Built with Django.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ADD THIS CSS FIX RIGHT HERE -->
+    <style>
+        /* Fixes the invisible text on hover for the outline login button */
+        .navbar-dark .nav-link.btn-outline-light:hover {
+            color: #212529 !important;
+            /* Forces text to be dark on hover */
+        }
+    </style>
+</body>
+
+</html>

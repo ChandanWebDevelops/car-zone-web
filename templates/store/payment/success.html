@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center py-5">
+    <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+    <h1 class="fw-bold">Payment Successful!</h1>
+    <p class="lead text-muted">Thank you for your purchase. Your payment has been processed securely.</p>
+    <p>Your order number is <strong>#{{ order.id }}</strong>.</p>
+    <p class="text-muted">Total Paid: <strong class="text-success">${{ order.get_total_cost|floatformat:2 }}</strong></p>
+    
+    <a href="{% url 'store:car_list' %}" class="btn btn-dark btn-lg mt-3">
+        Continue Shopping
+    </a>
+</div>
+{% endblock %}
