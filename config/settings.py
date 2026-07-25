@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,3 +142,83 @@ SECRET_KEY = config('SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
+
+
+# config/settings.py (Add to the very bottom)
+
+JAZZMIN_SETTINGS = {
+    # Title of the window (Browser tab)
+    "site_title": "AutoMarket Admin",
+
+    # Title on the login screen (19 chars max)
+    "site_header": "AutoMarket",
+
+    # Title on the brand (19 chars max)
+    "site_brand": "AutoMarket Dashboard",
+
+    # Logo (optional, you can leave this blank or add a URL)
+    "site_logo": None,
+
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome to the AutoMarket Admin Panel",
+
+    # Copyright on the footer
+    "copyright": "AutoMarket Ltd",
+
+    # Search model (optional)
+    "search_model": ["store.Car", "store.Order"],
+
+    # Top Menu (optional)
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "View Website", "url": "/", "new_window": True},
+    ],
+
+    # Icons for the sidebar (FontAwesome 5)
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "store.Car": "fas fa-car",
+        "store.Brand": "fas fa-industry",
+        "store.Category": "fas fa-tags",
+        "store.Order": "fas fa-shopping-cart",
+        "store.OrderItem": "fas fa-box",
+    },
+    
+    # UI Tweaks
+    "show_ui_builder": False,
+    "changeform_format": "horizontal_tabs", # Makes editing forms look much cleaner
+}
+
+# Optional: Customize the colors to match your site's dark/red theme
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-danger", # Makes the top bar red!
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": True,
+    "theme": "darkly", # Dark mode theme!
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
