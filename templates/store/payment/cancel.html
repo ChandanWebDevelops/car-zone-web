@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container py-5">
 <div class="text-center py-5">
     <i class="fas fa-times-circle fa-5x text-danger mb-4"></i>
     <h1 class="fw-bold">Payment Cancelled</h1>
@@ -8,5 +9,6 @@
     <a href="{% url 'store:cart_detail' %}" class="btn btn-dark btn-lg mt-3">
         Return to Cart
     </a>
+</div>
 </div>
 {% endblock %}

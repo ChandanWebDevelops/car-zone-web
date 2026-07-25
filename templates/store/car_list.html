@@ -2,113 +2,112 @@
 
 {% block content %}
 
-<!-- ==================== HERO SECTION ==================== -->
-<section class="rounded-4 overflow-hidden mb-5 position-relative" 
-         style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 450px;">
-    <div class="container py-5">
-        <div class="row align-items-center" style="min-height: 350px;">
-            <div class="col-lg-7 text-white">
-                <span class="badge bg-danger px-3 py-2 mb-3 fs-6">🔥 New Arrivals Weekly</span>
-                <h1 class="display-3 fw-bold mb-3" style="line-height: 1.1;">
-                    Find Your <br>
-                    <span style="background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        Dream Car
-                    </span> Today
+<!-- ==================== CINEMATIC HERO SECTION ==================== -->
+<section class="position-relative text-white d-flex align-items-center"
+    style="background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; min-height: 600px;">
+
+    <!-- Dark Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="container position-relative z-1 py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-danger px-3 py-2 mb-3 fs-6 shadow-sm">🔥 New Arrivals Weekly</span>
+                <h1 class="display-4 fw-bold mb-3" style="line-height: 1.1; letter-spacing: -1px;">
+                    Drive Your <br>
+                    <span class="text-danger">Dream Car</span> Today.
                 </h1>
-                <p class="lead text-white-50 mb-4" style="max-width: 500px;">
-                    Browse our premium collection of certified vehicles. From electric sedans to rugged trucks, your perfect ride is waiting.
+                <p class="lead text-white-50 mb-4" style="max-width: 600px; font-size: 1.05rem;">
+                    Browse our premium collection of certified pre-owned and new vehicles. Transparent pricing, zero
+                    hidden fees, and free home delivery.
                 </p>
-                <div class="d-flex gap-3">
-                    <a href="#inventory" class="btn btn-danger btn-lg px-4">
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#inventory" class="btn btn-danger px-4 py-2 fw-bold shadow-lg">
                         <i class="fas fa-search me-2"></i>Browse Inventory
                     </a>
-                    <a href="{% url 'store:register' %}" class="btn btn-outline-light btn-lg px-4">
-                        <i class="fas fa-user-plus me-2"></i>Join Now
+                    <a href="{% url 'store:register' %}" class="btn btn-outline-light px-4 py-2 fw-bold">
+                        <i class="fas fa-user-plus me-2"></i>Create Account
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-5 text-center d-none d-lg-block">
-                <i class="fas fa-car-side" style="font-size: 12rem; color: rgba(255,255,255,0.08);"></i>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== STATS BAR ==================== -->
-<section class="mb-5">
-    <div class="row g-3 text-center">
-        <div class="col-6 col-md-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body py-4">
-                    <h2 class="fw-bold text-primary mb-0">500+</h2>
-                    <small class="text-muted">Cars in Stock</small>
-                </div>
+<!-- ==================== TRUSTED BRANDS ==================== -->
+<section class="py-5 bg-white border-bottom">
+    <div class="container">
+        <p class="text-center text-muted fw-bold text-uppercase small mb-4">Trusted by thousands, featuring top brands
+        </p>
+        <div class="row text-center g-4 align-items-center opacity-75">
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">TOYOTA</h3>
             </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body py-4">
-                    <h2 class="fw-bold text-success mb-0">10K+</h2>
-                    <small class="text-muted">Happy Customers</small>
-                </div>
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">FORD</h3>
             </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body py-4">
-                    <h2 class="fw-bold text-warning mb-0">50+</h2>
-                    <small class="text-muted">Top Brands</small>
-                </div>
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">TESLA</h3>
             </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body py-4">
-                    <h2 class="fw-bold text-danger mb-0">24/7</h2>
-                    <small class="text-muted">Customer Support</small>
-                </div>
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">BMW</h3>
+            </div>
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">HONDA</h3>
+            </div>
+            <div class="col-6 col-md-2">
+                <h3 class="fw-bold text-dark mb-0">AUDI</h3>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ==================== WHY CHOOSE US ==================== -->
-<section class="mb-5">
-    <div class="text-center mb-4">
-        <h2 class="fw-bold">Why Choose <span class="text-primary">AutoMarket</span>?</h2>
-        <p class="text-muted">We make car buying simple, transparent, and stress-free.</p>
-    </div>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <div class="card-body">
-                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                        <i class="fas fa-shield-alt fa-2x text-primary"></i>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-danger fw-bold text-uppercase">Why AutoMarket?</h6>
+            <h2 class="fw-bold h2">The Best Way to Buy a Car</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4 custom-hover-card">
+                    <div class="card-body text-center">
+                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-shield-alt fa-2x text-danger"></i>
+                        </div>
+                        <h4 class="fw-bold">Certified Vehicles</h4>
+                        <p class="text-muted">Every car undergoes a rigorous 150-point inspection before it hits our
+                            lot.</p>
                     </div>
-                    <h5 class="fw-bold">Certified Vehicles</h5>
-                    <p class="text-muted small">Every car undergoes a rigorous 150-point inspection before it hits our lot.</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <div class="card-body">
-                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4 custom-hover-card">
+                    <div class="card-body text-center">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-dollar-sign fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold">Best Price Guarantee</h4>
+                        <p class="text-muted">We match any competitor's price. No hidden fees, no surprises at checkout.
+                        </p>
                     </div>
-                    <h5 class="fw-bold">Best Price Guarantee</h5>
-                    <p class="text-muted small">We match any competitor's price. No hidden fees, no surprises at checkout.</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <div class="card-body">
-                    <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                        <i class="fas fa-truck fa-2x text-warning"></i>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4 custom-hover-card">
+                    <div class="card-body text-center">
+                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-truck fa-2x text-success"></i>
+                        </div>
+                        <h4 class="fw-bold">Free Home Delivery</h4>
+                        <p class="text-muted">We deliver your new car right to your doorstep, anywhere in the country.
+                        </p>
                     </div>
-                    <h5 class="fw-bold">Free Home Delivery</h5>
-                    <p class="text-muted small">We deliver your new car right to your doorstep, anywhere in the country.</p>
                 </div>
             </div>
         </div>
@@ -116,83 +115,193 @@
 </section>
 
 <!-- ==================== FEATURED INVENTORY ==================== -->
-<section id="inventory" class="mb-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-            <h2 class="fw-bold mb-0">Featured Vehicles</h2>
-            <p class="text-muted mb-0">Hand-picked cars from our latest collection</p>
+<section id="inventory" class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h6 class="text-danger fw-bold text-uppercase mb-2">Our Collection</h6>
+                <h2 class="fw-bold h2 mb-0">Featured Vehicles</h2>
+            </div>
+            <span class="badge bg-light text-dark fs-6 border px-3 py-2">{{ cars|length }} cars available</span>
         </div>
-        <span class="badge bg-light text-dark fs-6 border">{{ cars|length }} cars available</span>
-    </div>
 
-    <div class="row g-4">
-        {% for car in cars %}
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0">
-                <!-- Image -->
-                <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center position-relative" style="height: 220px;">
-                    {% if car.image %}
-                        <img src="{{ car.image.url }}" class="img-fluid" alt="{{ car.model_name }}" style="height: 100%; width: 100%; object-fit: cover;">
-                    {% else %}
+        <div class="row g-4">
+            {% for car in cars %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 car-card">
+                    <!-- Image -->
+                    <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center position-relative overflow-hidden"
+                        style="height: 240px;">
+                        {% if car.image %}
+                        <img src="{{ car.image.url }}" class="img-fluid w-100 h-100" alt="{{ car.model_name }}"
+                            style="object-fit: cover; transition: transform 0.5s ease;">
+                        {% else %}
                         <i class="fas fa-car fa-4x text-white opacity-50"></i>
-                    {% endif %}
-                    <!-- Availability Badge -->
-                    {% if car.is_available and car.stock > 0 %}
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-success">In Stock</span>
-                    {% else %}
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-danger">Sold Out</span>
-                    {% endif %}
-                </div>
-                
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <h5 class="card-title fw-bold mb-0">{{ car.year }} {{ car.brand.name }} {{ car.model_name }}</h5>
-                            <span class="badge bg-primary mt-1">{{ car.category.name }}</span>
-                            <span class="badge bg-secondary mt-1">{{ car.get_fuel_type_display }}</span>
+                        {% endif %}
+
+                        <!-- Badges -->
+                        <div class="position-absolute top-0 start-0 m-3">
+                            {% if car.is_available and car.stock > 0 %}
+                            <span class="badge bg-success shadow-sm">In Stock</span>
+                            {% else %}
+                            <span class="badge bg-danger shadow-sm">Sold Out</span>
+                            {% endif %}
                         </div>
-                        <h5 class="text-success fw-bold">${{ car.price|floatformat:0 }}</h5>
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-dark shadow-sm">{{ car.year }}</span>
+                        </div>
                     </div>
-                    
-                    <hr>
-                    
-                    <ul class="list-unstyled small text-muted mb-0">
-                        <li class="d-inline me-3"><i class="fas fa-road me-1"></i>{{ car.mileage|floatformat:0 }} mi</li>
-                        <li class="d-inline me-3"><i class="fas fa-cogs me-1"></i>{{ car.get_transmission_display }}</li>
-                        <li class="d-inline"><i class="fas fa-palette me-1"></i>{{ car.color }}</li>
-                    </ul>
+
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="card-title fw-bold mb-1">{{ car.brand.name }} {{ car.model_name }}</h5>
+                                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">{{
+                                    car.category.name }}</small>
+                            </div>
+                            <h4 class="text-danger fw-bold mb-0">${{ car.price|floatformat:0 }}</h4>
+                        </div>
+
+                        <hr class="my-3">
+
+                        <ul class="list-unstyled small text-muted mb-0 d-flex justify-content-between">
+                            <li><i class="fas fa-road me-1 text-primary"></i> {{ car.mileage|floatformat:0 }} mi</li>
+                            <li><i class="fas fa-cogs me-1 text-primary"></i> {{ car.get_transmission_display }}</li>
+                            <li><i class="fas fa-gas-pump me-1 text-primary"></i> {{ car.get_fuel_type_display }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-footer bg-white border-0 p-4 pt-0">
+                        <a href="{% url 'store:car_detail' car.id car.slug %}" class="btn btn-dark w-100 py-2 fw-bold">
+                            View Details <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="card-footer bg-white border-0 pb-3">
-                    <a href="{% url 'store:car_detail' car.id car.slug %}" class="btn btn-dark w-100">
-                        <i class="fas fa-eye me-2"></i>View Details
-                    </a>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-car fa-3x text-muted mb-3"></i>
+                <h3>No cars available right now.</h3>
+                <p class="text-muted">Check back soon for new arrivals!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="py-5 bg-dark text-white" style="background-color: #1a1a1a !important;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-danger fw-bold text-uppercase">Testimonials</h6>
+            <h2 class="fw-bold h2">What Our Customers Say</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card bg-secondary bg-opacity-25 border-0 h-100 p-4">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic mb-4">"The easiest car buying experience I've ever had. The Tesla was
+                            delivered to my driveway in perfect condition. Highly recommend AutoMarket!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                                style="width: 40px; height: 40px;">JD</div>
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">John Doe</h6>
+                                <small class="text-white-50">Bought a Tesla Model 3</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-secondary bg-opacity-25 border-0 h-100 p-4">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic mb-4">"Transparent pricing and zero hidden fees. I knew exactly what I was
+                            paying for. The F-150 is a beast and the team was super helpful."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                                style="width: 40px; height: 40px;">MS</div>
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Mike Smith</h6>
+                                <small class="text-white-50">Bought a Ford F-150</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-secondary bg-opacity-25 border-0 h-100 p-4">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="fst-italic mb-4">"Great selection of hybrid and electric vehicles. The checkout
+                            process was secure and fast. Will definitely buy my next car here."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-success rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                                style="width: 40px; height: 40px;">SJ</div>
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Sarah Johnson</h6>
+                                <small class="text-white-50">Bought a Toyota RAV4</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        {% empty %}
-        <div class="col-12 text-center py-5">
-            <i class="fas fa-car fa-3x text-muted mb-3"></i>
-            <h3>No cars available right now.</h3>
-            <p class="text-muted">Check back soon for new arrivals!</p>
-        </div>
-        {% endfor %}
     </div>
 </section>
 
-<!-- ==================== CTA BANNER ==================== -->
-<section class="bg-dark text-white rounded-4 p-5 text-center mb-5">
-    <h2 class="fw-bold mb-2">Ready to Find Your Perfect Ride?</h2>
-    <p class="text-white-50 mb-4">Sign up today and get exclusive deals delivered to your inbox.</p>
-    {% if not request.user.is_authenticated %}
-        <a href="{% url 'store:register' %}" class="btn btn-danger btn-lg px-5">
-            <i class="fas fa-rocket me-2"></i>Get Started Free
-        </a>
-    {% else %}
-        <a href="#inventory" class="btn btn-danger btn-lg px-5">
-            <i class="fas fa-search me-2"></i>Browse More Cars
-        </a>
-    {% endif %}
+<!-- ==================== FINAL CTA ==================== -->
+<section class="py-5 bg-black text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold h2 mb-3">Ready to Find Your Perfect Ride?</h2>
+        <p class="lead mb-4 text-white-50">Join thousands of happy drivers. Sign up today and get exclusive deals.</p>
+        
+        {% if not request.user.is_authenticated %}
+            <a href="{% url 'store:register' %}" class="btn btn-danger px-4 py-2 fw-bold shadow-lg">
+                Get Started Free <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        {% else %}
+            <a href="#inventory" class="btn btn-danger px-4 py-2 fw-bold shadow-lg">
+                Browse More Cars <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        {% endif %}
+    </div>
 </section>
+<!-- ==================== CUSTOM ANIMATIONS ==================== -->
+<style>
+    /* Smooth lift effect for car cards */
+    .car-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .car-card:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Hover effect for feature cards */
+    .custom-hover-card {
+        transition: transform 0.3s ease;
+    }
+
+    .custom-hover-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
 
 {% endblock %}
