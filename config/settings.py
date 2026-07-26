@@ -78,10 +78,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('POSTGRES_DB', default='automarket'),
+        'USER': config('POSTGRES_USER', default='automarket'),
+        'PASSWORD': config('POSTGRES_PASSWORD', default='automarket'),
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -222,3 +227,5 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success"
     }
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

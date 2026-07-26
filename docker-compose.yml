@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=your-secret-key-here
+      - STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here
+      - STRIPE_SECRET_KEY=sk_test_your_key_here
+    env_file: .env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=automarket
+      - POSTGRES_USER=automarket
+      - POSTGRES_PASSWORD=automarket
+
+volumes:
+  postgres_data:
