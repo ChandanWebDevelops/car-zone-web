@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -141,7 +143,6 @@ CART_SESSION_ID = 'cart'
 LOGIN_REDIRECT_URL = 'store:profile'
 LOGOUT_REDIRECT_URL = 'store:car_list'
 
-from decouple import config
 
 SECRET_KEY = config('SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
