@@ -7,6 +7,15 @@
             <h2 class="fw-bold text-center mb-4">Log In</h2>
             <form method="post">
                 {% csrf_token %}
+                <!-- ERROR MESSAGE BLOCK -->
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        {{ form.non_field_errors.0 }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+                <!-- END ERROR MESSAGE BLOCK -->
                 <div class="mb-3">
                     <label class="form-label">Username</label>
                     {{ form.username }}
