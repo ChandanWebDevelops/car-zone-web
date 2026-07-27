@@ -1,6 +1,6 @@
 # store/views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse # <--- ADD THIS LINE!
+from django.urls import reverse 
 
 from django.views.generic import ListView, DetailView
 from django.views import View
@@ -95,7 +95,7 @@ def order_create(request):
                 )
                 
             # 3. Clear the cart session
-            # cart.clear()
+            cart.clear()
             
             # 4. Redirect to a success page
             # return render(request, 'store/ordered.html', {'order': order})

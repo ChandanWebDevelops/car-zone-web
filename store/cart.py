@@ -60,6 +60,7 @@ class Cart:
             cart[str(car.id)]['car'] = car
 
         for item in cart.values():
+            item = item.copy() 
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
             yield item
